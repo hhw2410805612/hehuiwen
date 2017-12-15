@@ -1,0 +1,68 @@
+/*具体信息*/
+.container .money-total{
+    height: 15%;
+    border-bottom: 1px solid #EDECE8;
+    padding-top:6%;
+}
+.container .money-total .order-form{
+    border-right: 1px solid #EDECE8;
+    height: 80%;
+}
+.money-total p{
+    text-align: center;
+    line-height: 20px;
+}
+.money-total .number{
+    font-size: 19px;
+    color: #000;
+}
+.money-total .number .info-pict{
+    font:400 22px/20px "";
+}
+.information-total{
+    height: 20%;
+    border-bottom: 1px solid #EDECE8;
+    text-align: center;
+    line-height: 20px;
+}
+.information-total .small-picture{
+    width: 35px;
+    height: 35px;
+    border-radius:50% ;
+    margin:10px auto;
+
+}
+.information-total .small-picture .info-pic{
+    font-size: 20px;
+    color: #fff;
+    line-height: 35px;
+}
+.information-total .information{
+    height: 100%;
+    border-right: 1px solid #EDECE8;
+
+}
+.information-total .col-xs-4{
+    padding-top: 5%;
+}
+.information-total .yellow{
+    background-color: #FFB45E;
+}
+.information-total .pale-green{
+    background-color: #B4D98C;
+}
+.information-total .reddish-orange{
+    background-color: #FC8888;
+}
+.information-total .light-blue{
+    background-color: #82DCC2;
+}
+.information-total .light-purple{
+    background-color: #C7A9EF;
+}
+.information-total .dark-blue{
+    background-color: #8CC9F5;
+}
+.manage-index .form-group{
+    text-align: left;
+}

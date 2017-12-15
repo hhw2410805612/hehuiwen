@@ -1,0 +1,143 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/shop/shop.css"/>
+</block>
+<block name="body">
+
+    <!--商城主页-->
+    <div class="shop-index">
+        <!--顶部图片-->
+        <div class="container padding-none fl">
+            <img style="width: 100%" src="__PUBLIC__/Home/images/shop_top_bg.jpg"/>
+        </div>
+        <!--<div>-->
+            <!--<marquee><span style="color:red;font-size: 15px;">校外起送价为10元，低于10元多加一元配送费</span></marquee>-->
+        <!--</div>-->
+        <!--商品种类-->
+        <div class="container padding-none goods-type fl">
+            <div class="container-fluid center-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-3 text-center feature-icon" classify-id="1">
+                            <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/087.png"/>
+                            <span class="text-ellipsis">宿舍小铺</span>
+                        </div>
+                        <div class="col-xs-3 text-center feature-icon" classify-id="2">
+                            <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/090.png"/>
+                            <span class="text-ellipsis">夜宵</span>
+                        </div>
+                        <div class="col-xs-3 text-center feature-icon" classify-id="3">
+                            <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/068.png"/>
+                            <span class=" text-ellipsis">下午茶</span>
+                        </div>
+                        <div class="col-xs-3 text-center feature-icon" classify-id="7">
+                            <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/shop_index_1.jpg"/>
+                            <span class=" text-ellipsis">一元快递</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 text-center feature-icon" classify-id="5">
+                            <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/001.png"/>
+                            <span class=" text-ellipsis">美食外卖</span>
+                        </div>
+                        <div class="col-xs-3 text-center feature-icon" classify-id="6">
+                            <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/065.png"/>
+                            <span class=" text-ellipsis">蛋糕餐厅</span>
+                        </div>
+                        <div class="col-xs-3 text-center feature-icon" classify-id="4">
+                            <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/006.png"/>
+                            <span class=" text-ellipsis">水果</span>
+                        </div>
+                        <div class="col-xs-3 text-center feature-icon" classify-id="8">
+                            <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/shop_index_2.jpg"/>
+                            <span class=" text-ellipsis">校园微店</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--类型列表-->
+        <div class="container padding-none goods-select fl ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <span class="center-block select-span text-ellipsis" type="button" data-toggle="modal"
+                              data-target="#shopSelect" id="selectClassify" onclick="showSelectModel(this)">
+                            <span>全部商店</span>
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        </span>
+                    </div>
+                    <div class="col-xs-4 span-col">
+                        <span class="center-block select-span text-ellipsis" type="button" data-toggle="modal"
+                              data-target="#shopSelect" id="selectSort" onclick="showSelectModel(this)">
+                            <span>综合排序</span>
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        </span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="center-block select-span text-ellipsis" type="button" data-toggle="modal"
+                              data-target="#shopSelect" id="selectDiscount" onclick="showSelectModel(this)">
+                            <span>全部优惠</span>
+                            <span class="glyphicon glyphicon-menu-down"
+                                  aria-hidden="true"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--选择模态框-->
+        <div class="modal fade" id="shopSelect" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="shopSelectClose" data-dismiss="modal"
+                                aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modalLabel">分类</h4>
+                    </div>
+                    <div class="modal-body" id="shopSelectBody"></div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-warning btn-block" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--商城列表-->
+        <div class="container shop-list fl" id="shopList"></div>
+
+    </div>
+
+    <!--底部导航-->
+    <div class="shop-footer">
+        <div class="container">
+            <div class="row">
+                <a href="{:U('index')}">
+                    <div class="col-xs-4 text-center">
+                        <img class="img-circle center-block"
+                             src="__PUBLIC__/Home/images/shop_icon/shop_index_fill.png"/>
+                        <span class="text-ellipsis footer-name selected">主页</span>
+                    </div>
+                </a>
+                <a href="{:U('order')}">
+                    <div class="col-xs-4 text-center">
+                        <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/shop_order.png"/>
+                        <span class="text-ellipsis footer-name">订单</span>
+                    </div>
+                </a>
+                <a href="{:U('mine')}">
+                    <div class="col-xs-4 text-center">
+                        <img class="img-circle center-block" src="__PUBLIC__/Home/images/shop_icon/shop_mine.png"/>
+                        <span class="text-ellipsis footer-name">我的</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/shop/shop.index.js"></script>
+</block>

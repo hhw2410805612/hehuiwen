@@ -1,0 +1,104 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/mine/address.css"/>
+</block>
+<block name="body">
+    <div class="address-edit">
+        <form action="{:U('edit')}" method="post">
+            <input type="hidden" name="address_id" value="{$address.address_id}"/>
+            <input type="hidden" name="selected_shop_id" value="{$shop_id}"/>
+
+            <div class="container head">联系人</div>
+            <div class="container body">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <span class="edit-label text-ellipsis">姓名</span>
+                    </div>
+                    <div class="col-xs-9">
+                        <input name="name" placeholder="请填写收货人姓名" value="{$address.name}" autocomplete="off" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <span class="edit-label"></span>
+                    </div>
+                    <div class="col-xs-9">
+                        <if condition="$address['sex'] eq null">
+                            <input type="hidden" name="sex" value="1"/>
+                            <else/>
+                            <input type="hidden" name="sex" value="{$address.sex}"/>
+                        </if>
+                        <span class='sex' sex-type="1">
+                            <if condition="$address['sex'] eq 2">
+                                    <span class="glyphicon glyphicon-ok-circle"></span>
+                                <else/>
+                                    <span class="glyphicon glyphicon-ok-circle" style="color: #d59405;"></span>
+                            </if>
+                        <span class="sex-name">先生</span>
+                    </span>
+                        <span class='sex' sex-type="2">
+                        <if condition="$address['sex'] eq 2">
+                                    <span class="glyphicon glyphicon-ok-circle" style="color: #d59405;"></span>
+                                <else/>
+                                    <span class="glyphicon glyphicon-ok-circle"></span>
+                            </if>
+                        <span class="sex-name">女士</span>
+                    </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <span class="edit-label text-ellipsis">手机</span>
+                    </div>
+                    <div class="col-xs-9">
+                        <input type="number" name="tell" value="{$address.tell}" placeholder="请填写收货手机号"
+                               autocomplete="off" maxlength="11" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="container head">收货地址</div>
+            <div class="container body">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <span class="edit-label text-ellipsis">学校</span>
+                    </div>
+                    <div class="col-xs-7">
+                        <input disabled value="宜宾学院" autocomplete="off"/>
+                        <input type="hidden" name="site" value="宜宾学院"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <span class="edit-label text-ellipsis">楼号-门牌号</span>
+                    </div>
+                    <div class="col-xs-7">
+                        <input name="xxsite" placeholder="例：A区13舍515寝室" value="{$address.xxsite}" autocomplete="off" required/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container save">
+                <button class="btn btn-warning btn-block btn-lg">保存</button>
+            </div>
+        </form>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/mine/mine.address.js"></script>
+    <script type="text/javascript">
+        alert("目前只支持宜宾学院内配送");
+        var shop_id = "<?php echo $shop_id ?>";
+
+        //返回至主界面
+        if (window.history && window.history.pushState) {
+            $(window).on('popstate', function () {
+                if (shop_id == "" || shop_id == null)
+                    window.location.href = Home + "Mine/address.html";
+                else
+                    window.location.href = Home + "Shop/detail/shop_id/" + shop_id + ".html";
+
+            });
+            window.history.pushState('forward', null, 'Home/Mine/edit.html');
+        }
+    </script>
+</block>

@@ -1,0 +1,12 @@
+[ 2017-10-18T15:29:08+08:00 ] 182.140.177.243 /index.php?s=/Home/Error/404.html
+ERR: 无法加载控制器:Error
+
+[ 2017-10-18T15:29:08+08:00 ] 125.39.207.17 /index.php?s=/Home/Error/404.html
+ERR: 无法加载控制器:Error
+
+[ 2017-10-18T23:50:13+08:00 ] 182.140.177.243 /index.php?s=/Home/Base/base
+ERR: 无法加载控制器:Base
+
+[ 2017-10-18T23:50:32+08:00 ] 117.185.27.114 /index.php?s=/Home/Base/base
+ERR: 无法加载控制器:Base
+

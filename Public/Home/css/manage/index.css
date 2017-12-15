@@ -1,0 +1,123 @@
+/*头部*/
+.shop-banner{
+    position: relative;
+    width: 100%;
+    height: 26%;
+    background-color: #323A45;
+    padding-top: 30px;
+}
+.shop-banner .banner-picture{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    float: left;
+    margin-left: 20px;
+}
+.shop-banner .banner-picture .banner-img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #0CA818;
+    margin: 8px;
+}
+.shop-banner .shop-name{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    margin-left: 20px;
+}
+.shop-banner .open{
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    width: 50px;
+    text-align: center;
+    border-radius: 5px;
+    color: #428484;
+    border:1px solid #428484;
+    margin: 10px 10px 0 0 ;
+    font-weight: bold;
+}
+.shop-banner .look-myshop{
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    height: 30px;
+    float: right;
+    color: #BABDC6;
+}
+
+.shop-banner span{
+    color: #BABDC6;
+    font-size: 10px;
+}
+/*具体信息*/
+.container .money-total{
+    height: 15%;
+    border-bottom: 1px solid #EDECE8;
+    padding-top:6%;
+}
+.container .money-total .order-form{
+    border-right: 1px solid #EDECE8;
+    height: 80%;
+}
+.money-total p{
+    text-align: center;
+    line-height: 20px;
+}
+.money-total .number{
+    font-size: 19px;
+    color: #000;
+}
+.money-total .number .info-pict{
+    font:400 22px/20px "";
+}
+.information-total{
+    height: 20%;
+    border-bottom: 1px solid #EDECE8;
+    text-align: center;
+    line-height: 20px;
+}
+.information-total .small-picture{
+    width: 35px;
+    height: 35px;
+    border-radius:50% ;
+    margin:10px auto;
+
+}
+.information-total .small-picture .info-pic{
+    font-size: 20px;
+    color: #fff;
+    line-height: 35px;
+}
+.information-total .information{
+    height: 100%;
+    border-right: 1px solid #EDECE8;
+
+}
+.information-total .col-xs-4{
+    padding-top: 5%;
+}
+.information-total .yellow{
+    background-color: #FFB45E;
+}
+.information-total .pale-green{
+    background-color: #B4D98C;
+}
+.information-total .reddish-orange{
+    background-color: #FC8888;
+}
+.information-total .light-blue{
+    background-color: #82DCC2;
+}
+.information-total .light-purple{
+    background-color: #C7A9EF;
+}
+.information-total .dark-blue{
+    background-color: #8CC9F5;
+}
+.manage-index .form-group{
+    text-align: left;
+}

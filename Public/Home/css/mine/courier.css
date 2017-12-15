@@ -1,0 +1,210 @@
+.mine-courier  .manage-banner{
+    width: 100%;
+    height: 35px;
+    background-color: #323A45;
+}
+.mine-courier  .manage-banner ul .loid{
+    height: 100%;
+    float: left;
+    width: 33.3333333%;
+    line-height: 35px;
+    text-align: center;
+    color:#fff;
+    font-size: 12px;
+}
+.mine-courier  .manage-banner ul .selected{
+    color:#08BAA9;
+    border-bottom: 2px solid #08BAA9;
+    text-decoration:none;
+}
+
+/*内容部分*/
+.mine-courier .group-list{
+    width: 100%;
+    margin: 0 auto;
+    /*height: 100%;*/
+    height: 93.8%;
+    overflow: scroll;
+}
+
+/*已完成*/
+.mine-courier .order-list .list-box{
+    margin-bottom: 5px;
+}
+.mine-courier .order-list .finsh-banner{
+    width: 100%;
+    height: 50px;
+    background-color: #EFEFEF;
+    float: left;
+}
+.mine-courier .order-list .finsh-banner .finsh-text{
+    float: left;
+    height: 100%;
+    font: 700 27px/50px "";
+}
+.mine-courier .order-list .finsh-banner .finsh-quick{
+    float: left;
+    color: #FABC77;
+    line-height: 60px;
+    /*width: 30%;*/
+    font-size: 16px;
+}
+.mine-courier .order-list .finsh-banner .confirm{
+    float: right;
+    line-height: 50px;
+    color:#9B9B9B;
+    font-size: 14px;
+
+}
+
+/*用户信息*/
+.mine-courier .order-list .user-info{
+    width: 100%;
+    border-bottom:1px solid #E1E1E1;
+    padding-bottom: 10px;
+}
+.mine-courier .order-list .user-info .row{
+    padding: 0 15px;
+}
+.mine-courier .order-list .user-info .head-box{
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.mine-courier .order-list .user-info .tell-box .tell-number{
+    float: left;
+    font:800 15px/30px "";
+    color:#666;
+}
+.mine-courier .order-list .user-info .tell-box .tell-pic{
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:1px solid #08BAA9;
+}
+.mine-courier .order-list .user-info .tell-box .pic-call{
+    font-size: 17px;
+    color:#08BAA9 ;
+    line-height: 25px;
+    margin-left:5px;
+}
+.mine-courier .order-list .user-info .order-address{
+    width: 100%;
+    font:500 14px/30px "";
+    clear: both;
+}
+.mine-courier .order-list .user-info .shop-name{
+    display: inline-block;
+    padding: 6px 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.42857143;
+    color:#337ab7;
+}
+
+/*骑手信息*/
+.mine-courier #orderDetailBody .rider-information{
+    width: 100%;
+    border-bottom:1px solid #E1E1E1;
+    padding: 10px 15px;
+}
+.mine-courier #orderDetailBody .rider-information .rider-name{
+    /*height: 20%;*/
+    width: 100%;
+    float: left;
+    /*margin-top: 5%;*/
+}
+.mine-courier #orderDetailBody .rider-information .rider-name .name{
+    float: left;
+    font:600 15px/30px "";
+}
+.mine-courier #orderDetailBody .rider-information .rider-name .time{
+    float: left;
+    font:500 14px/30px "";
+    color: #666;
+}
+.mine-courier #orderDetailBody .rider-information .rider-name .name-pic{
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:1px solid #08BAA9;
+}
+.mine-courier #orderDetailBody .rider-information .rider-name .pic-call{
+    font-size: 17px;
+    color:#08BAA9 ;
+    line-height: 25px;
+    margin-left:5px;
+}
+.mine-courier #orderDetailBody .rider-information .order-time{
+    width: 100%;
+    height: 30px;
+    clear: both;
+    margin-top: 45px;
+}
+.mine-courier #orderDetailBody .rider-information .order-time .finsh-time{
+    float: left;
+    font:600 15px/30px "";
+    color:#737373;
+}
+
+/*商品信息*/
+.mine-courier #orderDetailBody .commodity{
+    width: 100%;
+    /*min-height: 110px;*/
+    border-bottom:1px solid #E1E1E1;
+}
+.mine-courier #orderDetailBody .commodity .commodity-information{
+    height: 30px;
+}
+.mine-courier #orderDetailBody .commodity .commodity-information .goods-text{
+    float: left;
+    font: 800 15px/30px "";
+}
+.mine-courier #orderDetailBody .commodity .total-num{
+    font: 800 15px/30px "";
+}
+.mine-courier #orderDetailBody .commodity .total-num .glyphicon,.total{
+    color:red;
+}
+
+/*具体商品*/
+.mine-courier #orderDetailBody .dishes{
+    background-color:#F4F4F4 ;
+    height: 60px;
+    margin-top: 5px;
+    position: relative;
+}
+.mine-courier #orderDetailBody .dishes .dishes-picture{
+    width: 50px;
+    height: 100%;
+    float: left;
+    margin-top: 5px;
+}
+.mine-courier #orderDetailBody .food-num{
+    text-indent: 10px;
+}
+.mine-courier #orderDetailBody .food-name{
+    width: 66%;
+    margin-left: 50px;
+    padding:4px 0 0 10px;
+}
+.mine-courier #orderDetailBody .food-name b{
+    color:#08BAA9;
+}
+.mine-courier #orderDetailBody .tmoney{
+    position: absolute;
+    right: 10px;
+    top: 40%;
+}
+.mine-courier #orderDetailBody .comment .comment-text{
+    float: left;
+    font: 800 15px/30px "";
+}
+.mine-courier #orderDetailBody .comment .comment-area{
+    background: white;
+}

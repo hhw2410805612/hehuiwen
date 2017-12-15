@@ -1,0 +1,52 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/admin/insert.css"/>
+</block>
+<block name="body">
+    <!--店铺列表-->
+    <div class="container insert-list">
+        <form action="{:U('insert')}" method="post" class="form-horizontal">
+            <div class="form-group">
+
+                <label for="" class="col-xs-5 control-label">店铺名:</label>
+                <div class="col-xs-10">
+                    <input type="text" name="name" class="form-control" placeholder="店铺名" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">地址:</label>
+                <div class="col-xs-10">
+                    <input type="text" name="address" class="form-control" placeholder="店铺地址" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">电话号码:</label>
+                <div class="col-xs-10">
+                    <input type="text" name="shop_tell" class="form-control" placeholder="电话号码" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">特色店:</label>
+                <div class="col-xs-12">
+                    <volist name="getFeatures" id="vo">
+                        <input type="checkbox" value="{$vo.feature_no}" name="feature_no[]">{$vo.feature_name}&nbsp;&nbsp;&nbsp;&nbsp;
+                    </volist>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">是否自营店:</label>
+                <div class="col-xs-5">
+                    <input type="radio" name="is_ourselves" checked="checked" value="0">否
+                    <input type="radio" name="is_ourselves"  value="1">是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-block btn-warning">添加</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</block>

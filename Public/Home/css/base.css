@@ -1,0 +1,416 @@
+/** 
+ * 描述：重置页面元素，设置布局样式及公共模块
+ * 作用范围：公共
+ */
+
+html, body {
+    font: 12px/1.5 "microsoft yahei", Helvetica, Tahoma, Arial, "Microsoft jhengHei", sans-serif;
+    color: #404040;
+    background-color: #fff;
+}
+
+body, p, pre, blockquote,
+h1, h2, h3, h4, h5, h6,
+dl, dt, dd, ul, ol, li,
+form, fieldset, legend, select,
+input, textarea, button,
+table, caption, tr, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+fieldset, img {
+    border: 0 none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input, button, textarea, select, option {
+    font-family: inherit;
+    font-size: 100%;
+    outline: 0;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+/* 布局样式 */
+.cf, .nav {
+    *zoom: 1;
+}
+
+.cf:before, .cf:after,
+.nav:before, .nav:after,
+.media:before, .media:after,
+.form-item:before, .form-item:after {
+    display: table;
+    content: "";
+}
+
+.cf:after,
+.nav:after,
+.media:after,
+.form-item:after {
+    clear: both;
+}
+
+.cf, .nav, .media,
+.form-item {
+    *zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+.cont-container {
+    float: left;
+    width: 720px;
+}
+
+.side-container {
+    float: right;
+    width: 270px;
+}
+
+.columns .hd {
+    padding: 0 15px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.columns .bd {
+    padding: 10px;
+}
+
+/* 公共独立类名 */
+.hidden {
+    display: none !important;
+}
+
+.block {
+    display: block;
+}
+
+.mod {
+    margin-bottom: 10px;
+    border: 1px solid #ebebeb;
+}
+
+.pillar {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.ellipsis,
+.ellipsis li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 导航列表 */
+.nav li {
+    float: left;
+}
+
+.nav-list {
+    float: none;
+}
+
+.nav li a,
+.nav li a:hover,
+.nav-list li a,
+.nav-list li a:hover {
+    display: block;
+    text-decoration: none;
+}
+
+/* 表单样式 */
+.text, .textarea {
+    padding: 4px 6px;
+    font-size: 14px;
+    color: #34495E;
+    vertical-align: middle;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.text {
+    height: 20px;
+    line-height: 20px;
+}
+
+.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.textarea {
+    display: block;
+}
+
+.textarea textarea {
+    width: 100%;
+    border: 0 none;
+}
+
+select {
+    padding: 2px;
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    border: 1px solid #ebebeb;
+}
+
+.radio, .checkbox {
+    display: inline-block;
+    font-size: 14px;
+    min-height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.radio input,
+.checkbox input {
+    float: left;
+    margin: 4px 4px 0 0;
+    *margin: 0 2px 0 0;
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+    margin-left: 15px;
+}
+
+.must {
+    margin: 0 4px;
+    color: #f00;
+}
+
+/* 横向多列表单 */
+.form-horizontal .form-item {
+    margin-bottom: 10px;
+}
+
+.form-horizontal .controls {
+    min-height: 28px;
+    overflow: hidden;
+    *zoom: 1;
+}
+
+.form-horizontal .item-label {
+    float: left;
+    margin-right: 25px;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: right;
+}
+
+.form-horizontal .text {
+    width: 220px;
+}
+
+/* 按钮 */
+.btn-custom {
+    color: #fff;
+    background-color: #f2ecac;
+    border-color: #e7e1a4;
+}
+
+.btn-warning:focus,
+.btn-warning.focus {
+    color: #fff;
+    background-color: #ded89e;
+    border-color: #c6c18d;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: #ded89e;
+    border-color: #ded89e;
+}
+
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+
+.btn-warning:active:hover,
+.btn-warning.active:hover,
+.open > .dropdown-toggle.btn-warning:hover,
+.btn-warning:active:focus,
+.btn-warning.active:focus,
+.open > .dropdown-toggle.btn-warning:focus,
+.btn-warning:active.focus,
+.btn-warning.active.focus,
+.open > .dropdown-toggle.btn-warning.focus {
+    color: #fff;
+    background-color: #d58512;
+    border-color: #985f0d;
+}
+
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+    background-image: none;
+}
+
+.btn-warning.disabled:hover,
+.btn-warning[disabled]:hover,
+fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus,
+.btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled.focus,
+.btn-warning[disabled].focus,
+fieldset[disabled] .btn-warning.focus {
+    background-color: #f2ecac;
+    border-color: #e7e1a4;
+}
+
+.btn-warning .badge {
+    color: #f0ad4e;
+    background-color: #fff;
+}
+
+.btn-width-bg {
+    padding: 6px 25px;
+}
+
+.tell:after, .tell:hover, .tell:focus, .tell:link {
+    text-decoration: none;
+}
+
+/* 左右两列的媒体结构 */
+.media {
+    margin-bottom: 15px;
+}
+
+.media .media-avatar,
+.media .media-side {
+    float: left;
+    margin-right: 15px;
+}
+
+.media .media-avatar,
+.media .media-avatar img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+.media .media-avatar img,
+.media .media-side img {
+    display: block;
+}
+
+.media .media-body {
+    overflow: hidden;
+    line-height: 1.8;
+    word-break: break-all;
+}
+
+/* 实心小三角 */
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    vertical-align: middle;
+    border: 4px dashed transparent;
+}
+
+.arrow-down {
+    border-top-style: solid;
+    border-top-color: #000;
+    border-bottom-width: 0;
+}
+
+.arrow-up {
+    border-bottom-style: solid;
+    border-bottom-color: #000;
+    border-top-width: 0;
+}
+
+.arrow-left {
+    border-right-style: solid;
+    border-right-color: #000;
+    border-left-width: 0;
+}
+
+.arrow-right {
+    border-left-style: solid;
+    border-left-color: #000;
+    border-right-width: 0;
+}
+
+/*布局margin和padding*/
+.padding-none {
+    padding: 0;
+}
+
+.margin-none {
+    margin: 0;
+}
+
+/*加载*/
+.body-onload {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.body-onload p {
+    text-align: center;
+    margin: 50% auto;
+}
+
+/*背景音乐*/
+#musicBox {
+    display: none;
+}
+
+#bgMusic {
+    display: none;
+}

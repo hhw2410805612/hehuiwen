@@ -1,0 +1,151 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/manage/index.css"/>
+</block>
+<block name="body">
+    <!--我的店铺-->
+    <div class="manage-index">
+
+        <!--店铺头部-->
+        <div class="shop-banner">
+            <div class="banner-picture">
+                <img class="img-circle" src="{$shop.shop_img}" alt="{$shop.name}">
+            </div>
+            <div class="shop-name">{$shop.name}</div>
+            <if condition="$shop['status'] eq 1">
+                <div class="open">营业中</div>
+                <else/>
+                <div class="open">休息中</div>
+            </if>
+            <a href="__MODULE__/Shop/detail/shop_id/{$shop.shop_id}.html">
+                <div class="look-myshop">查看我的门店 <span class="glyphicon glyphicon-menu-right text-right"></span></div>
+            </a>
+        </div>
+
+        <div class="container">
+            <div class="row money-total">
+                <div class="col-xs-6 order-form text-center">
+                    <p class="number">{$count.order}</p>
+                    <p>今日有效订单</p>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <p class="number"><span class="glyphicon glyphicon-yen info-pict"></span>{$count.money}</p>
+                    <p>今日营业额</p>
+                </div>
+            </div>
+            <div class="row information-total">
+                <a href="{:U('order')}">
+                    <div class="col-xs-4 information text-center">
+                        <p class="small-picture yellow text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>订单管理</p>
+                    </div>
+                </a>
+                <a href="{:U('detail')}">
+                    <div class="col-xs-4 information text-center">
+                        <p class="small-picture pale-green text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>商品管理</p>
+                    </div>
+                </a>
+                <div class="col-xs-4" id="noticeBtn" shop-id="{$shop.shop_id}">
+                    <p class="small-picture dark-blue"><span class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                    <p>店铺信息</p>
+                </div>
+            </div>
+            <div class="row information-total">
+                <a href="{:U('today')}">
+                    <div class="col-xs-4 information text-center">
+                        <p class="small-picture reddish-orange text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>今日统计</p>
+                    </div>
+                </a>
+
+                    <a href="{:U('history')}">
+                        <div class="col-xs-4 information text-center">
+                            <p class="small-picture light-blue text-center"><span
+                                    class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                            <p>历史统计</p>
+                        </div>
+                    </a>
+
+
+            </div>
+        </div>
+
+        <!--商店信息模态框-->
+        <div class="modal fade" id="shopInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="shopInfoClose" data-dismiss="modal"
+                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">修改信息</h4>
+                    </div>
+                    <form action="{:U('update_shop')}" method="post" enctype="multipart/form-data">
+                        <div class="modal-body" id="shopInfoBody">
+                            <input type="hidden" name="shop_id" value="{$shop.shop_id}"/>
+                            <div class="form-group">
+                                <label class="control-label">店铺名:</label>
+                                <input type="text" name="name" class="form-control" placeholder="建议不要太长"
+                                       value="{$shop.name}" maxlength="10" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">店铺状态:</label>
+                                <if condition="$shop['status'] eq 1">
+                                    <input type="radio" name="status" checked value="1"/>营业
+                                    <input type="radio" name="status" value="0"/>休息
+                                    <else/>
+                                    <input type="radio" name="status" value="1"/>营业
+                                    <input type="radio" name="status" checked value="0"/>休息
+                                </if>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">起送价:</label>
+                                <input type="number" step="0.1" name="start_money" class="form-control" placeholder="起送价格"
+                                       value="{$shop.start_money}" maxlength="5" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">配送价:</label>
+                                <input type="number" step="0.1" name="run_money" class="form-control" placeholder="起送价格"
+                                       value="{$shop.run_money}" maxlength="5" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">地址:</label>
+                                <input type="text" name="address" class="form-control" placeholder="店铺所处位置"
+                                       value="{$shop.address}" maxlength="250" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">联系电话:</label>
+                                <input type="number" name="shop_tell" class="form-control" maxlength="13"
+                                       value="{$shop.shop_tell}" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">头像:</label>
+                                <input type="file" name="shop_img" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">公告:</label>
+                                <textarea name="notice" class="form-control" placeholder="不得超过250字" maxlength="250">{$shop.notice}</textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消修改</button>
+                            <button type="submit" class="btn btn-warning">保存修改</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        var shop_id = "{$shop.shop_id}";
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/common/news.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/manage/manage.index.js"></script>
+</block>

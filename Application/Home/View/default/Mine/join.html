@@ -1,0 +1,71 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/mine/mine.css"/>
+</block>
+<block name="body">
+    <notempty name="join">
+        <div class="container mine-join">
+            <div class="join-success">
+                <div class="img">
+                    <img src="__PUBLIC__/Home/images/icon/success.png" alt="" height="100px" class="img-circle center-block"><br/>
+                        <if condition="$join['status'] eq 0">
+                        <span class="block text-center">提交成功，请等候处理</span>
+                        <elseif condition="$join['status'] eq 1"/>
+                        <span class="block text-center">申请已通过，请等候通知</span>
+                        <elseif condition="$join['status'] eq -1"/>
+                        <span class="block text-center">申请未通过</span>
+
+                    </if>
+                </div>
+            </div>
+        </div>
+        <else/>
+        <div class="container mine-join">
+            <h3 class="text-center">加入我们</h3>
+            <form action="{:U('join')}" method="post" class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputName3" class="col-sm-2 control-label">姓名:</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" name="name" id="inputName3" placeholder="真实姓名" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">性别:</label>
+                    <div class="col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="radio" checked="checked" name="sex" value="1"> 男士
+                            </label>
+                            <label>
+                                <input type="radio" name="sex" value="2"> 女士
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">手机号码:</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="tell" class="form-control" placeholder="方便联系" maxlength="11" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">意向:</label>
+                    <div class="col-sm-10">
+                        <textarea name="want" rows="4" class="form-control" placeholder="你想加入我们从事什么职业" maxlength="250" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">介绍:</label>
+                    <div class="col-sm-10">
+                        <textarea name="intro" rows="8" class="form-control" placeholder="介绍一下自己吧" maxlength="1000" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-block btn-warning">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </notempty>
+</block>

@@ -1,0 +1,60 @@
+<extend name="Base/base"/>
+<block name="body">
+    <!--店铺列表-->
+    <div class="container edit-list">
+        <form method="post"  class="form-horizontal">
+            <input type="hidden" name="user_id" value="{$userInfo.user_id}">
+            <div class="form-group">
+
+                <label for="" class="col-xs-5 control-label">昵称:</label>
+                <div class="col-xs-10">
+                    <input type="text" name="nickname" value="{$userInfo.nickname}" class="form-control" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">电话号码:</label>
+                <div class="col-xs-10">
+                    <input type="text" name="tell" value="{$userInfo.tell}" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">是否店主:</label>
+                <div class="col-xs-12">
+                    <input type="radio" id="shop-value"  <if condition="$userInfo['shop_id'] gt 0 ">checked="checked"</if> name="shop_id">是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio"   value="0" <if condition="$userInfo['shop_id'] eq 0">checked="checked"</if> name="shop_id">否&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio"   value="-1" <if condition="$userInfo['shop_id'] eq -1">checked="checked"</if> name="shop_id">自营店主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                </div>
+            </div>
+            <div class="form-group" id="show-id">
+                <label for="" class="col-xs-4 control-label">店铺id:</label>
+                <div class="col-xs-2">
+                    <input type="text" name="shop_id" value="{$userInfo.shop_id}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label  class="col-xs-5 control-label">是否骑手:</label>
+                <div class="col-xs-5">
+                    <input type="radio" value="1" <if condition="$userInfo['is_courier'] eq 1">checked="checked"</if> name="is_courier">是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" value="0" <if condition="$userInfo['is_courier'] eq 0">checked="checked"</if> name="is_courier">否
+                </div>
+            </div>
+            <div class="form-group">
+                <label  class="col-xs-5 control-label">是否管理员:</label>
+                <div class="col-xs-5">
+                    <input type="radio" value="1" <if condition="$userInfo['is_admin'] eq 1">checked="checked"</if> name="is_admin">是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" value="0" <if condition="$userInfo['is_admin'] eq 0">checked="checked"</if> name="is_admin">否
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-block btn-warning">修改</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/admin/edit.js"></script>
+</block>

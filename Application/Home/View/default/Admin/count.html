@@ -1,0 +1,50 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/admin/count.css"/>
+</block>
+<block name="body">
+    <div class="container admin-count">
+        <div class="row goods-search">
+            <div class="col-xs-4 form-group">
+                <label class="control-label">店铺:</label>
+                <select class="form-control" name="shop_id" select-id="0">
+                    <option value="0">全部</option>
+                    <volist name="shop_list" id="vo">
+                        <option value="{$vo.shop_id}">{$vo.name}</option>
+                    </volist>
+                </select>
+            </div>
+            <div class="col-xs-4 form-group">
+                <label class="control-label">类别:</label>
+                <select class="form-control" name="classify_id" select-id="1">
+                    <option value="0">全部</option>
+                </select>
+            </div>
+            <div class="col-xs-4 form-group">
+                <label class="control-label">商品:</label>
+                <select class="form-control" name="goods_id" select-id="2">
+                    <option value="0">全部</option>
+                </select>
+            </div>
+        </div>
+        <div class="row goods-count">
+            <div class="col-xs-12">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>名字</th>
+                        <th>描述</th>
+                        <th>总价格</th>
+                        <th>数量</th>
+                    </tr>
+                    </thead>
+                    <tbody id="countList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/admin/admin.count.js"></script>
+</block>

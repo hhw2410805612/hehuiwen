@@ -1,0 +1,159 @@
+/*订单已完成*/
+.shop-order-detail .container{
+    background-color: #fff;
+}
+.shop-order-detail .order-information {
+    width: 100%;
+    height: 140px;
+    background-color: #F4F4F4;
+}
+.shop-order-detail .order-information .list-group-item {
+    border: 0;
+    line-height: 20px;
+}
+.shop-order-detail .order-information .finish{
+    font:600 17px/15px "";
+    padding-top: 20px;
+}
+.shop-order-detail .order-information .finish span{
+    height: 20px;
+}
+.shop-order-detail .order-information .gang-btn{
+    background-color:#FFD162 ;
+    border: 0;
+}
+/*商家详细信息*/
+.shop-order-detail .store-information{
+    height: 40px;
+    width: 100%;
+    background-color: #F4F4F4;
+    line-height: 40px;
+}
+.shop-order-detail .store-information .picture-left,.shop-information{
+    display: block;
+    float: left;
+
+}
+.shop-order-detail .store-information .picture-right{
+    display: block;
+    float: right;
+}
+.shop-order-detail .store-information .picture-left,.picture-right{
+    width: 15px;
+    height: 15px;
+    margin-top: 13px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+.shop-order-detail .store-information .picture-right{
+    line-height: 15px;
+    font-size: 20px;
+}
+/*具体菜品数量*/
+.shop-order-detail .dishes{
+    background-color:#F4F4F4 ;
+    height: 60px;
+    margin-top: 5px;
+    position: relative;
+}
+.shop-order-detail .dishes .dishes-picture{
+    width: 50px;
+    height: 100%;
+    float: left;
+    margin-top: 5px;
+}
+.shop-order-detail .food-num{
+    text-indent: 10px;
+}
+.shop-order-detail .food-name{
+    width: 75%;
+    margin-left: 50px;
+    padding:4px 0 0 10px;
+}
+.shop-order-detail .food-name b{
+    /*color: ;*/
+}
+.shop-order-detail .tmoney{
+    position: absolute;
+    right: 10px;
+    top: 40%;
+}
+/*各种费用*/
+.shop-order-detail .cost{
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    line-height: 30px;
+    padding: 0 5px;
+}
+/*总计费用*/
+.shop-order-detail .num-money{
+    width: 100%;
+    height: 50px;
+    clear: both;
+    font-size: 12px;
+    border-top: 1px solid #F0F0F0;
+}
+.shop-order-detail .num-money .total{
+
+    height: 100%;
+    float: right;
+    line-height: 50px;
+}
+.shop-order-detail .out-of-pocket{
+    font:600 15px/50px "黑体";
+    color:#000;
+    padding-left: 5px;
+    padding-right: 0;
+}
+/*联系商家*/
+.shop-order-detail .contact-businesses{
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #F0F0F0;
+}
+.shop-order-detail .contact-businesses span{
+    text-align: center;
+    display: block;
+    line-height: 50px;
+    padding-left: 5px;
+
+}
+.shop-order-detail .contact-businesses span a{
+    font-size: 16px;
+}
+
+/*顾客信息*/
+.shop-order-detail .customer-information li{
+    width: 100%;
+    height: 10%;
+    float: left;
+}
+.shop-order-detail .custom-claim{
+    line-height: 50px;
+    color: #BDBDBD;
+    display: block;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+.shop-order-detail .claim{
+    color:#000;
+
+    height: 100%;
+    line-height: 50px;
+    float: left;
+
+}
+.shop-order-detail .claim p{
+  line-height: 15px;
+    margin-top: 20px;
+}
+.shop-order-detail .customer-information li button{
+    float: right;
+    height: 20px;
+    width: 45px;
+    margin-top: 15px;
+    background-color: #fff;
+    border: 1px solid #DADADA;
+}

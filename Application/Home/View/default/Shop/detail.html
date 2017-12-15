@@ -1,0 +1,181 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/shop/detail.css"/>
+</block>
+<block name="body">
+
+    <!--商店详情-->
+    <div class="shop-detail">
+
+        <!--商店信息-->
+        <div class="container detail-head" data-toggle="modal" data-target="#shopInfo">
+            <div class="row">
+                <div class="col-xs-2-5">
+                    <img class="shop-img" src="{$shop.shop_img}"/>
+                </div>
+                <div class="col-xs-9-5">
+                    <p>
+                        <span class="status">
+                            <if condition="$shop['status'] eq '1'">
+                                营业中
+                                <elseif condition="$shop['status'] eq '0'"/>
+                                休息中
+                                <elseif condition="$shop['status'] eq '-1'"/>
+                                装修中
+                                <else/>
+                                检查中
+                            </if>
+                        </span>
+                    </p>
+                    <if condition="$shop['notice'] neq null">
+                        <p class="affiche text-ellipsis"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;{$shop.notice}
+                        </p>
+                    </if>
+                </div>
+            </div>
+        </div>
+
+        <!--商店信息-->
+        <div class="modal fade" id="shopInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="shopSelectClose" data-dismiss="modal"
+                                aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modalLabel">{$shop.name}</h4>
+                    </div>
+
+                    <div class="modal-body" id="shopSelectBody">
+                        <p class="text-left carousel">{$shop.notice}</p>
+                    </div>
+                    <div class="modal-footer text-right">
+                        <a class="tell" href="tel://{$shop.shop_tell}">
+                            <button type="button" class="btn btn-default">联系商家</button>
+                        </a>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">返回店铺</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--商品种类-->
+        <div class="container detail-body">
+            <div class="row goods">
+                <div class="col-xs-3 padding-none goods-type">
+                    <volist name="goods_classify" id="vo" key="key">
+                        <div class="type-name" classify-id="{$vo.classify_id}">{$vo.classify_name}</div>
+                    </volist>
+                </div>
+                <div class="col-xs-9 goods-list" id="goodsList"></div>
+            </div>
+        </div>
+
+        <!--立即购买-->
+        <div class="container detail-footer">
+            <div class="row">
+                <div class="col-xs-4 money-run">
+                    <span>配送费:<span class="glyphicon glyphicon-yen"></span>{$shop.run_money}</span>
+                </div>
+                <div class="col-xs-5 money-all">
+                    <span><span class="glyphicon glyphicon-yen"></span><span class="value">0</span></span>
+                </div>
+                <div class="col-xs-3 money-pay" shop-id="{$shop.shop_id}">
+                    <span id="addressBtn"></span>
+                </div>
+            </div>
+        </div>
+
+        <!--配送信息-->
+        <div class="modal fade" id="addressSelect" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="addressSelectClose" data-dismiss="modal"
+                                aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modalLabel2">配送信息</h4>
+                    </div>
+                    <div class="modal-body text-left" id="addressSelectBody"></div>
+                    <div class="modal-footer text-right">
+                        <a class="tell" href="__MODULE__/Mine/edit/shop_id/{$shop.shop_id}.html">
+                            <button type="button" class="btn btn-default">新建地址</button>
+                        </a>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal" id="payBtn">微信支付</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--商品详情-->
+        <div class="modal fade" id="goodsDetail" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="goodsDetailLabel">商品详情</h4>
+                    </div>
+                    <div class="modal-body" id="goodsDetailBody">
+                        <img class="img-responsive" src="__PUBLIC__/Home/images/onloading.gif" alt="正在加载中.."/>
+                        <div class="alert alert-warning" role="alert"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--选择标签-->
+        <div class="modal fade" id="labelSelect" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="labelSelectLabel">商品详情</h4>
+                    </div>
+                    <div class="modal-body" id="labelSelectBody">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 size">规格:</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 size-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" id="labelSelectFooter">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-7 text-left">
+                                    <span class="footer-detail"><span class="bei text-ellipsis"></span></span>
+                                </div>
+                                <div class="col-xs-5 text-right">
+                                    <span class="operate">
+                                        <span class="glyphicon glyphicon-minus-sign"></span>
+                                        <span class="number" stock="50" goods-id="363" money="6">0</span>
+                                        <span class="glyphicon glyphicon-plus-sign"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        var classify = "{$classify}";
+        var Home = "/Home/";
+        var shop_id = "{$shop.shop_id}";
+        var run_money = "{$shop.run_money}";
+        var start_money = "{$shop.start_money}";
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/shop/shop.detail.js"></script>
+
+    <script type="text/javascript">
+
+
+    </script>
+</block>

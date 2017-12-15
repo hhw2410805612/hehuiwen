@@ -1,0 +1,38 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/Admin/user_list.css"/>
+</block>
+<block name="body">
+    <!--店铺列表-->
+    <div class="user-list">
+        <div class="container">
+            <div class="text-center user-show-list">
+                <h3>用户列表</h3>
+            </div>
+            <table class="table table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>昵称</th>
+                        <th>店主</th>
+                        <th>配送员</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="userInfo" id="vo">
+                        <tr>
+                            <td class="warning">{$vo.nickname}</td>
+                            <td class="warning"><if condition="$vo[shop_id] eq -1">自营店主<elseif condition="$vo[shop_id] eq 0"/>否<else />是</if></td>
+                            <td class="warning"><if condition="$vo['is_courier'] eq 1">是<else />否</if></td>
+                            <td class="warning"><span class="glyphicon glyphicon-pencil edit-icon" user-id="{$vo.user_id}"></span>|<span class="glyphicon glyphicon-trash delete-icon" user-id="{$vo.user_id}"></span></td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/admin/user.list.js"></script>
+
+</block>

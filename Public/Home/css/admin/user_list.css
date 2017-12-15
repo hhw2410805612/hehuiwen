@@ -1,0 +1,36 @@
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 1860px;
+}
+.user-list .user-show-list{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.user-list  .table td{
+    vertical-align: middle;
+    text-align: center;
+}
+.user-list .table tr td{
+    width: 72px;
+    height:57px;
+
+}
+.user-list .table td .glyphicon{
+    color: #F1C40D;
+    line-height:10px;
+}
+.user-list .table tr,th{
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+

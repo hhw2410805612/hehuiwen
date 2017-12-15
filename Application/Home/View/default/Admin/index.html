@@ -1,0 +1,50 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/admin/main.css"/>
+</block>
+<block name="body">
+    <div class="manage-index">
+        <div class="container">
+            <div class="row information-total">
+                <a href="{:U('show_list')}">
+                    <div class="col-xs-4 information text-center">
+                        <p class="small-picture yellow text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>店铺管理</p>
+                    </div>
+                </a>
+                <a href="{:U('count')}">
+                    <div class="col-xs-4 information text-center">
+                        <p class="small-picture pale-green text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>订单管理</p>
+                    </div>
+                </a>
+                <a href="{:U('user_list')}">
+                    <div class="col-xs-4 information text-center">
+                        <p class="small-picture light-blue text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>用户管理</p>
+                    </div>
+                </a>
+            </div>
+            <div class="row information-total">
+                <a>
+                    <div class="col-xs-4 information text-center">
+                        <p class="small-picture reddish-orange text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>在线支付</p>
+                    </div>
+                </a>
+                <a>
+                    <div class="col-xs-4 information text-center">
+                        <p class="small-picture light-blue text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>网页支付</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script"></block>

@@ -1,0 +1,68 @@
+/*订单管理*/
+.mine-order{
+    width: 100%;
+    min-height: 100%;
+    background: #F4F4F4;
+}
+.mine-order .order-list{
+    padding-bottom: 12px;
+}
+.mine-order .order-list .shop{
+    background: #FFFFFF;
+}
+.mine-order .order-list .shop{
+    border-bottom: 1px solid rgba(128,128,128,0.3);
+}
+.mine-order .order-list .shop .gray-block{
+    width: 100%;
+    display: block;
+    height: 12px;
+    margin-bottom: 12px;
+    background: #F4F4F4;
+}
+.mine-order .order-list .shop .shop-name-box .name{
+    font-size: 16px;
+    font-family: 华文细黑;
+    font-weight: 700;
+    line-height: 4em;
+}
+.mine-order .order-list .shop .order-status{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 4.5em;
+}
+.mine-order .order-list .goods{
+    padding: 4px 0 0 0;
+    background: #FFFFFF;
+}
+.mine-order .order-list .goods .name,.number{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #888888;
+}
+.mine-order .order-list .money{
+    padding: 4px 0 2px 0;
+    background: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    border-bottom: 1px solid rgba(128,128,128,0.3);
+}
+.mine-order .order-list .money .number{
+    color: #000000;
+    font-weight: bold;
+}
+.mine-order .order-list .footer{
+    background: #FFFFFF;
+    padding: 10px 0;
+}
+.mine-order .order-list .footer .col-xs-12{
+    text-align: right;
+}
+.mine-order .order-list .footer .col-xs-12 .btn{
+    border-radius: 0;
+}
+.mine-order .order-list .footer .tell:after,.tell:hover,.tell:focus,.tell:link{
+    text-decoration: none;
+}

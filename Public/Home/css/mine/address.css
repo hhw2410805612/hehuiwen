@@ -1,0 +1,118 @@
+
+/*地址管理*/
+.address-manage{
+    width: 100%;
+    min-height: 100%;
+    background: #F4F4F4;
+}
+.address-manage .head{
+    background: #FFFFFF;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(151,151,151,0.4);
+}
+.address-manage .head .name{
+    font-size: 13px;
+    line-height: 25px;
+    color: #858585;
+}
+.address-manage .head .manager{
+    font-size: 14px;
+    line-height: 25px;
+}
+.address-manage .pass{
+    height: 12px;
+    background: #F4F4F4;
+}
+.address-manage .body{
+    background: white;
+    padding-bottom: 42px;
+}
+.address-manage .body .row{
+    position: relative;
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(128,128,128,0.3);
+}
+.address-manage .body .detail-head{
+    line-height: 25px;
+    color: #000000;
+}
+.address-manage .body .detail-body{
+    line-height: 20px;
+    color: #858585;
+}
+.address-manage .body .edit{
+    display: none;
+    color: #d59405;
+    line-height: 45px;
+}
+.address-manage .body .edit .glyphicon-pencil{
+    margin-right: 5px;
+}
+.address-manage .footer{
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    background:#FFFFFF;
+    border-top: 1px solid rgba(151,151,151,0.4);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+.address-manage .footer .glyphicon{
+    color: #d59405;
+    margin-right: 3px;
+}
+
+/*编辑收货地址*/
+.address-edit{
+    width: 100%;
+    min-height: 100%;
+    background: #F4F4F4;
+}
+.address-edit .head{
+    font-size: 13px;
+    height: 34px;
+    line-height: 34px;
+    color: #888888;
+}
+.address-edit .body{
+    background: #FFFFFF;
+}
+.address-edit .body .row{
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(151,151,151,0.3);
+}
+.address-edit .body .edit-label{
+    display: block;
+    width: 100%;
+    height: 34px;
+    font-size: 12px;
+    line-height: 34px;
+}
+.address-edit .body input{
+    display: block;
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    margin: 2px 0;
+    line-height: 34px;
+    border: none;
+    background: white;
+}
+.address-edit .body .sex-name,.glyphicon-ok-circle{
+    height: 34px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #888888;
+
+}
+.address-edit .body .sex-name{
+    margin-right:8px ;
+    color: black;
+}
+.address-edit .save{
+    margin-top: 10px;
+}

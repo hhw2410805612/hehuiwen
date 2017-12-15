@@ -1,0 +1,285 @@
+/*商城主页*/
+.shop-index{
+    display: block;
+    width: 100%;
+}
+.shop-index .goods-type{
+    width: 100%;
+    height: auto;
+    background: white;
+    margin-top: -20px;
+    /*padding-bottom: 10px;*/
+    padding-top: 5px;
+    font-size: 12px;
+    border:2px solid rgba(128,128,128,0.2);
+    /*border-radius: 20px 20px 0 0;*/
+}
+.shop-index .goods-type ul{
+    margin-left: 0;
+}
+.shop-index .goods-type ul li{
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    margin: 0 2px;
+    line-height: 20px;
+    border-radius: 3px;
+    background: #85bcb8;
+}
+.shop-index .goods-type ul .list-selected{
+    background: #ECECEC;
+}
+.shop-index .goods-type .row{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.shop-index .goods-select{
+    width: 100%;
+    height: auto;
+    padding: 10px 0 5px 0;
+    background: white;
+    border-left:2px solid rgba(128,128,128,0.2);
+    border-right:2px solid rgba(128,128,128,0.2);
+    border-bottom:2px solid rgba(128,128,128,0.2);
+}
+.shop-index .goods-select .select-span{
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+}
+.shop-index .goods-select .span-col{
+    border-left:1px solid rgba(128,128,128,0.2);
+    border-right:1px solid rgba(128,128,128,0.2);
+}
+.shop-index .shop-list{
+    width: 100%;
+    padding-bottom: 70px;
+}
+.shop-index .shop-list .row{
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(128,128,128,0.3);
+}
+.shop-index .shop-list .logo{
+    width: 100%;
+    height: auto;
+    max-height: 80px;
+    border: 1px solid rgba(128,128,128,0.2);
+}
+.shop-index .shop-list .col-xs-8{
+    height: 80px;
+}
+.shop-index .shop-list .shop-name{
+    /*line-height: 40px;*/
+    height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.shop-index .shop-list .shop-intro .glyphicon{
+    color: #F1C40D;
+    font-size: 12px;
+    line-height: 20px;
+}
+.shop-index .shop-list .shop-intro .sell-out{
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.shop-index .shop-list .shop-status{
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    /*line-height: 30px;*/
+}
+.shop-index .shop-list .shop-status .sleep{
+    padding: 2px 5px;
+    border-radius: 4px;
+    border: 1px solid rgba(128,128,128,0.6);
+}
+.shop-index .shop-list .shop-status .work{
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #83AEED;
+    border: 1px solid #83AEED;
+}
+
+/*订单管理*/
+.shop-order{
+    width: 100%;
+    min-height: 100%;
+    background: #F4F4F4;
+}
+.shop-order .order-list{
+    padding-bottom: 70px;
+}
+.shop-order .order-list .shop{
+    background: #FFFFFF;
+}
+.shop-order .order-list .shop{
+    border-bottom: 1px solid rgba(128,128,128,0.3);
+}
+.shop-order .order-list .shop .gray-block{
+    width: 100%;
+    display: block;
+    height: 12px;
+    margin-bottom: 12px;
+    background: #F4F4F4;
+}
+.shop-order .order-list .shop .shop-name-box .name{
+    font-size: 16px;
+    font-family: 华文细黑;
+    font-weight: 700;
+    line-height: 4em;
+}
+.shop-order .order-list .shop .order-status{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 4.5em;
+}
+.shop-order .order-list .goods{
+    padding: 4px 0 0 0;
+    background: #FFFFFF;
+}
+.shop-order .order-list .goods .name,.number{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #888888;
+}
+.shop-order .order-list .money{
+    padding: 4px 0 2px 0;
+    background: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    border-bottom: 1px solid rgba(128,128,128,0.3);
+}
+.shop-order .order-list .money .number{
+    color: #000000;
+    font-weight: bold;
+}
+.shop-order .order-list .footer{
+    background: #FFFFFF;
+    padding: 10px 0;
+}
+.shop-order .order-list .footer .col-xs-12{
+    text-align: right;
+}
+.shop-order .order-list .footer .col-xs-12 .btn{
+    border-radius: 0;
+}
+.shop-order .order-list .footer .tell:after,.tell:hover,.tell:focus,.tell:link{
+    text-decoration: none;
+}
+
+
+    /*个人中心*/
+.shop-mine{
+    width: 100%;
+}
+.shop-mine .head{
+    width: 100%;
+    height: 180px;
+    position: relative;
+    background: #e3e0d1;
+}
+.shop-mine .head .head-box{
+    position: absolute;
+    z-index: 2;
+    width: 100px;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    margin: -65px 0 0 -55px;
+}
+.shop-mine .head .head-box .head-img{
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 3px solid rgba(255,255,255,1);
+}
+.shop-mine .head .head-box .nick{
+    float: left;
+    width: 86px;
+    margin-left: 7px;
+    margin-top: 5px;
+}
+.shop-mine .head .head-box .nick-box{
+    position: relative;
+    background: black;
+    width: 86px;
+    height: 26px;
+    padding: 2px 3px;
+    border-radius: 5px;
+    opacity: 0.4;
+}
+.shop-mine .head .head-box .nick-name{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    bottom: 0;
+    opacity: 1;
+    z-index: 5;
+    padding: 3px 5px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    color: white;
+}
+
+.shop-mine .body{
+    width: 100%;
+    padding: 15px;
+    padding-bottom: 70px;
+}
+.shop-mine .body .row{
+    border-bottom: 1px solid rgba(128,128,128,0.3);
+}
+.shop-mine .body .row .col-xs-4{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.shop-mine .body .img-button,.span-button{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 3px;
+}
+.shop-mine .body .span-button{
+    width: auto;
+    color: #D89606;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-shadow: 0 1px 1px #D89606;
+    height: 30px;
+}
+.shop-mine .body .box-center{
+    border-left: 1px solid rgba(128,128,128,0.3);
+    border-right: 1px solid rgba(128,128,128,0.3);
+}
+.shop-mine .body .tell:after,.tell:hover,.tell:focus,.tell:link{
+    text-decoration: none;
+}
+
+    /*商城底部*/
+.shop-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top:1px solid rgba(128,128,128,0.3);
+    background: #FBFBFB;
+    width: 100%;
+}
+.shop-footer .img-circle{
+    width: 30px;
+    height: auto;
+}
+.shop-footer .footer-name{
+    color:#404040;
+    font-weight: 600;
+}
+.shop-footer .selected{
+    color: #D89606;
+}

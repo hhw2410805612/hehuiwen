@@ -1,0 +1,46 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/Admin/shop_list.css"/>
+</block>
+<block name="body">
+    <!--店铺列表-->
+        <div class="shop-list">
+            <div class="container">
+                <div class="text-center shop-show-list">
+                    <h3>店铺列表</h3>
+                </div>
+                <div class="text-right">
+                    <span><a href="__CONTROLLER__/insert">添加店铺</a></span>
+                </div>
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>店名</th>
+                        <th>自营店</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="shopList" id="vo">
+                        <tr>
+                            <td>{$vo.name}</td>
+                            <td ><if condition="$vo[is_ourselves] eq 1">是<else />否</if></td>
+                            <td>
+                                <if condition="$vo[status] eq 1">营业中<elseif  condition="$vo[status] eq 0" />休息中<else />装修中</if>
+                            </td>
+                            <td ><span class="glyphicon glyphicon-pencil edit-icon" shop-id="{$vo.shop_id}"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="glyphicon glyphicon-trash delete-icon" shop-id="{$vo.shop_id}"></span></td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/admin/show.list.js"></script>
+
+</block>

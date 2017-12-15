@@ -1,0 +1,33 @@
+
+.shop-list .shop-show-list{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+.shop-list a{
+    text-decoration: none;
+    font-size: 20px;
+    color:#F1C40D ;
+    padding-right: 10px;
+}
+
+.shop-list .container tr td{
+    width: 60px;
+}
+.shop-list .container .table td {
+   vertical-align: middle;
+   text-align: center;
+}
+.shop-list .table td .glyphicon{
+    color: #F1C40D;
+    line-height:20px;
+}
+.shop-list .table tr,th{
+    font-size: 14px;
+    text-align: center;
+}
+
+
+

@@ -1,0 +1,30 @@
+﻿用户表（user）: user_id,nickname,head_img,shop_id(-1/0/shop_id),is_courier(1/0),is_admin(1/0),status;
+
+店铺表（shop）: shop_id,name,image(店铺图片),address(店铺地址),notice(公告),,shop_tell(店铺电话),score(店铺评分),run_time(配送时间),status(店铺状态);
+
+商品分类表（goods_classify）: classify_id(分类id),shop_id(所属分类商店),classify_name(商品分类名);
+
+店铺特色表（shop_feature）：shop_id,feature_no;
+特色表（feature）：feature_no,top_no(上级类别),feature_name;
+
+商品表（goods）: goods_id,shop_id(店铺),classify_id(分类id),,name,describe(描述),money(价格),image(展示图片),stock(库存),have_label(是否有标签),status(状态);
+订单表（order）: goods_group_id,goods_id,comment(备注),money(实际价格),count(数量);
+订单组表（order_group）: goods_group_id,shop_id(店铺id),address_id(配送地址),courier_id(派送员id),comment(评论),time(下单时间),star(星级评定),status;
+
+标签表(label)：Id,goods_id(商品id),label(标签名),money(标签价格)
+地址表（address）: address_id,user_id,name,sex,tell,site(地址),xxsite(详细地址),status(地址状态);
+送货员表(courier):courier_id,user_id(骑手用户id),name,tell(电话),status(是否上班)
+购物车表(car):user_id(用户id),goods_id(商品id),count(商品数量);
+
+
+
+//公告表（notice）: notice_id,shop_id(店铺id),content(内容),publish_time(发布时间),status;
+//活动表（activity）：
+
+订单状态说明：
+0：已下单
+1: 已接单
+2: 配送中
+3：已完成
+4：已评价
+-1：已取消

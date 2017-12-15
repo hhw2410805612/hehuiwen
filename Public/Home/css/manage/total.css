@@ -1,0 +1,161 @@
+
+
+/*内容部分*/
+.modal.modal-dialog.modal-content .order-list{
+    width: 100%;
+    margin: 0 auto;
+    height: 93.8%;
+    overflow: scroll;
+}
+
+/*已完成*/
+.order-manage .order-list .finsh-banner{
+    width: 100%;
+    height: 50px;
+    background-color: #EFEFEF;
+    float: left;
+}
+.order-manage .order-list .finsh-banner .finsh-text{
+    float: left;
+    height: 100%;
+    font: 700 27px/50px "";
+}
+.order-manage .order-list .finsh-banner .finsh-quick{
+    float: left;
+    color: #FABC77;
+    line-height: 60px;
+    /*width: 30%;*/
+    font-size: 16px;
+}
+.order-manage .order-list .finsh-banner .confirm{
+    float: right;
+    line-height: 50px;
+    color:#9B9B9B;
+    font-size: 14px;
+
+}
+
+/*用户信息*/
+.order-manage .order-list .user-info{
+    width: 100%;
+    border-bottom:1px solid #E1E1E1;
+    padding-bottom: 10px;
+}
+.order-manage .order-list .user-info .row{
+    padding: 0 15px;
+}
+.order-manage .order-list .user-info .head-box{
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.order-manage .order-list .user-info .tell-box .tell-number{
+    float: left;
+    font:800 15px/30px "";
+    color:#666;
+}
+.order-manage .order-list .user-info .tell-box .tell-pic{
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:1px solid #08BAA9;
+}
+.order-manage .order-list .user-info .tell-box .pic-call{
+    font-size: 17px;
+    color:#08BAA9 ;
+    line-height: 25px;
+    margin-left:5px;
+}
+.order-manage .order-list .user-info .order-address{
+    width: 100%;
+    font:500 14px/30px "";
+    clear: both;
+}
+
+
+/*骑手信息*/
+.order-manage .order-list .rider-information{
+    width: 100%;
+    border-bottom:1px solid #E1E1E1;
+    padding: 10px 15px;
+}
+.order-manage .order-list .rider-information .rider-name{
+    /*height: 20%;*/
+    width: 100%;
+    float: left;
+    /*margin-top: 5%;*/
+}
+.order-manage .order-list .rider-information .rider-name .name{
+    float: left;
+    font:600 15px/30px "";
+}
+.order-manage .order-list .rider-information .rider-name .time{
+    float: left;
+    font:500 14px/30px "";
+    color: #666;
+}
+.order-manage .order-list .rider-information .rider-name .name-pic{
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:1px solid #08BAA9;
+}
+.order-manage .order-list .rider-information .rider-name .pic-call{
+    font-size: 17px;
+    color:#08BAA9 ;
+    line-height: 25px;
+    margin-left:5px;
+}
+.order-manage .order-list .rider-information .order-time{
+    width: 100%;
+    height: 30px;
+    clear: both;
+    margin-top: 45px;
+}
+.order-manage .order-list .rider-information .order-time .finsh-time{
+    float: left;
+    font:600 15px/30px "";
+    color:#737373;
+}
+
+
+/*商品信息*/
+.order-manage .order-list .commodity{
+    width: 100%;
+    /*min-height: 110px;*/
+    border-bottom:1px solid #E1E1E1;
+}
+.order-manage .order-list .commodity .commodity-information{
+    height: 30px;
+}
+.order-manage .order-list .commodity .commodity-information .goods-text{
+    float: left;
+    font: 800 15px/30px "";
+}
+
+.order-manage .order-list .commodity .goods-name,.goods-money,.goods-number{
+    font: 400 14px/30px "";
+}
+.order-manage .order-list .commodity .goods-name {
+    color: #959595;
+}
+.order-manage .order-list .commodity .total-num{
+    font: 800 15px/30px "";
+}
+.order-manage .order-list .commodity .total-num .glyphicon,.total{
+    color:red;
+}
+.order-manage .order-list .commodity .sure-box{
+    padding: 5px 0 10px 0;
+}
+.order-manage .order-list .commodity .sure-box .btn{
+    margin-left: 5px;
+}
+.order-manage .order-list .sure-get{
+    margin-bottom: 5px;
+}
+

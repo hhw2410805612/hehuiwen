@@ -1,0 +1,196 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/manage/detail.css"/>
+</block>
+<block name="body">
+
+    <!--商店详情-->
+    <div class="manage-detail">
+
+        <!--商店信息-->
+        <div class="container detail-head" data-toggle="modal" data-target="#shopInfo">
+            <div class="row">
+                <div class="col-xs-2-5">
+                    <img class="shop-img" src="{$shop.shop_img}"/>
+                </div>
+                <div class="col-xs-9-5">
+                    <p><span class="status"><if condition="$shop['status'] eq '1'">配送中<else/>休息中</if></span></p>
+                    <if condition="$shop['notice'] neq null">
+                        <p class="affiche text-ellipsis"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;{$shop.notice}</p>
+                    </if>
+                </div>
+            </div>
+        </div>
+
+        <!--商店信息模态框-->
+        <div class="modal fade" id="shopInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="shopSelectClose" data-dismiss="modal"
+                                aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modalLabel">{$shop.name}</h4>
+                    </div>
+                    <div class="modal-body" id="shopSelectBody">
+                        <p class="text-left">{$shop.notice}</p>
+                    </div>
+                    <div class="modal-footer text-right">
+                        <a class="tell" href="tel://17716174003">
+                            <button type="button" class="btn btn-default">拨打电话</button>
+                        </a>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">返回店铺</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--菜品种类-->
+        <div class="container detail-body">
+            <div class="row goods">
+                <div class="col-xs-3 padding-none goods-type">
+                    <volist name="classify" id="vo">
+                        <div class="type-name" classify-id="{$vo.classify_id}">{$vo.classify_name}</div>
+                    </volist>
+                </div>
+                <div class="col-xs-9 goods-list" id="goodsList"></div>
+            </div>
+        </div>
+
+        <!--类别管理-->
+        <div class="container detail-footer">
+            <div class="row">
+                <div class="col-xs-3 money-pay">
+                    <span id="classifyPlusBtn">增加类别</span>
+                </div>
+                <div class="col-xs-6 money-run" id="classifyName">未选择类别</div>
+                <div class="col-xs-3 money-pay">
+                    <span id="classifyEditBtn" classify-id="">编辑</span>
+                </div>
+            </div>
+        </div>
+
+        <!--商品模态框-->
+        <div class="modal fade" id="goodsEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="goodsEditClose" data-dismiss="modal"
+                                aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="goodsEditLabel">增加商品</h4>
+                    </div>
+                    <form action="{:U('add_goods')}" method="post" enctype="multipart/form-data">
+                        <div class="modal-body" id="goodsEditBody">
+                            <input type="hidden" name="goods_id" value=""/>
+                            <input type="hidden" name="shop_id" value="{$shop.shop_id}"/>
+                            <input type="hidden" name="classify_id" value=""/>
+                            <div class="form-group">
+                                <label class="control-label">商品名:</label>
+                                <input type="text" name="name" class="form-control" placeholder="建议不要太长" maxlength="10"
+                                       required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">描述:</label>
+                                <input type="text" name="describe" class="form-control" placeholder="简单地描述一下商品,可以不填"
+                                       maxlength="250"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">价格:</label>
+                                <input type="number" name="money" class="form-control" placeholder="填写规范,如10,10.5"
+                                       maxlength="5" step="0.1" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">图片:</label>
+                                <input type="file" name="image" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">库存:</label>
+                                <input type="number" name="stock" class="form-control" maxlength="5" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">标签:</label>
+                                <div class="label-list"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消修改</button>
+                            <button type="submit" class="btn btn-warning">保存修改</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!--类别模态框-->
+        <div class="modal fade" id="classifyEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="classifyEditClose" data-dismiss="modal"
+                                aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="classifyEditLabel">增加商品</h4>
+                    </div>
+                    <form action="{:U('add_classify')}" method="post">
+                        <div class="modal-body" id="classifyEditBody">
+                            <input type="hidden" name="shop_id" value="{$shop.shop_id}"/>
+                            <input type="hidden" name="classify_id" value=""/>
+                            <div class="form-group">
+                                <label class="control-label">类别名:</label>
+                                <input type="text" name="classify_name" class="form-control" placeholder="建议不要太长" maxlength="10" required/>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-center" id="classifyEditFooter"></div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!--标签模态框-->
+        <div class="modal fade" id="goodsLabel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="goodsLabelClose" data-dismiss="modal"
+                                aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="goodsLabelLabel">标签管理</h4>
+                    </div>
+                    <div class="modal-body" id="goodsLabelBody">
+                        <div class="container">
+                            <div class="row text-left">
+                                <label class="control-label">标签:</label>
+                                <div class="label-list"></div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="control-label">标签名:</label>
+                                    <input type="text" name="label" class="form-control" placeholder="建议不要太长" maxlength="10"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">价格:</label>
+                                    <input type="text" name="money" step="0.1" class="form-control" placeholder="可收费可不收费" maxlength="5"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-right">
+                        <button type="button" class="btn btn-danger delete-btn hide" label-id="0">删除标签</button>
+                        <button type="button" class="btn btn-warning sure-btn" label-id="0">新增标签</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        var shop_id = "{$shop.shop_id}";
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/manage/manage.detail.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/common/news.js"></script>
+</block>

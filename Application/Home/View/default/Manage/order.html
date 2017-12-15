@@ -1,0 +1,91 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/manage/order.css"/>
+</block>
+<block name="body">
+    <div class="order-manage">
+
+        <!--管理头部-->
+        <div class="manage-banner">
+            <ul>
+                <li class="loid selected" group-status="0">未确认</li>
+                <li class="loid" group-status="1">已确认</li>
+                <li class="loid" group-status="2">配送中</li>
+                <li class="loid" group-status="3">已完成</li>
+                <li class="loid" group-status="-1">已取消</li>
+            </ul>
+        </div>
+
+        <!--订单列表-->
+        <div class="order-list" id="orderList">
+            <notempty name="groupList">
+                <volist name="groupList" id="vo">
+                    <div class="list-box">
+                        <!--订单编号-->
+                        <div class="container finsh-banner">
+                            <div class="finsh-text">#{$vo.group_no}</div>
+                            <div class="finsh-quick">&nbsp;&nbsp;{$vo.time}</div>
+                            <div class="confirm">用户已下单</div>
+                        </div>
+                        <!--用户信息-->
+                        <div class="container user-info">
+                            <div class="row head-box">
+                                {$vo.address.name}&nbsp;&nbsp;
+                                <if condition="$vo['address']['sex'] eq 1">先生
+                                    <else/>
+                                    女士
+                                </if>
+                            </div>
+                            <div class="row tell-box">
+                                <div class="tell-number">{$vo.address.tell}</div>
+                                <a href="tel://{$vo.address.tell}" class="tell">
+                                    <div class="tell-pic">
+                                        <span class="glyphicon glyphicon-earphone pic-call"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="row order-address">
+                                <div class="finsh-time">{$vo.address.site}&nbsp;&nbsp;{$vo.address.xxsite}</div>
+                            </div>
+                            <div class="row text-right">
+                                <button class="btn btn-primary detail" group-id="{$vo.goods_group_id}">详细信息</button>
+                            </div>
+                        </div>
+                    </div>
+                </volist>
+                <else/>
+                <div class="container">
+                    <div class="alert alert-warning alert-dismissible text-center" style="margin-top: 10px"
+                         role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <strong class="text-center">目前没有订单哦！</strong></div>
+                </div>
+            </notempty>
+        </div>
+
+        <!--订单详情-->
+        <div class="modal fade" id="orderDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="orderDetailClose" data-dismiss="modal"
+                                aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="orderDetailLabel">订单详情</h4>
+                    </div>
+                    <div class="modal-body text-left" id="orderDetailBody"></div>
+                    <div class="modal-footer text-right" id="orderDetailFooter" group-id=""></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        var shop_id = "{$shop_id}";
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/manage/manage.order.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/common/news.js"></script>
+</block>

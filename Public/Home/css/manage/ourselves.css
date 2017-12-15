@@ -1,0 +1,148 @@
+/*头部*/
+.manage-ourselves .shop-banner{
+    background-color: #323A45;
+}
+.manage-ourselves .shop-banner .shop-list{
+    padding-bottom: 15px;
+}
+.manage-ourselves .shop-banner .shop-list .col-xs-3{
+    position: relative;
+    padding-top: 15px;
+}
+.manage-ourselves .shop-banner .shop-list .col-xs-3 .img-circle{
+    border: 2px solid #323A45;
+
+}
+.manage-ourselves .shop-banner .shop-list .img-selected .img-circle{
+    border: 2px solid #F1C40D;
+}
+.manage-ourselves .shop-banner .shop-list .col-xs-3 .number{
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+    line-height: 15px;
+    background: red;
+    padding: 5px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-align: center;
+}
+.manage-ourselves .shop-banner .shop-info{
+    padding-bottom: 15px;
+}
+.manage-ourselves .shop-banner .shop-name{
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+.manage-ourselves .shop-banner .shop-info .shop-status,.shop-mine{
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    margin-left: 15px;
+    color: #428484;
+    border:1px solid #428484;
+    font-weight: bold;
+}
+/*.manage-ourselves .shop-banner .banner-picture{*/
+    /*width: 100%;*/
+    /*background-color: #fff;*/
+    /*border-radius: 50%;*/
+/*}*/
+/*.manage-ourselves .shop-banner .banner-picture .banner-img{*/
+    /*width: 35px;*/
+    /*height: 35px;*/
+    /*border-radius: 50%;*/
+    /*background-color: #0CA818;*/
+    /*margin: 8px;*/
+/*}*/
+
+
+.manage-ourselves .shop-banner .look-myshop{
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    height: 30px;
+    float: right;
+    color: #BABDC6;
+}
+
+.manage-ourselves .shop-banner span{
+    color: #BABDC6;
+    font-size: 10px;
+}
+/*具体信息*/
+.manage-ourselves .container .money-total{
+    height: 15%;
+    border-bottom: 1px solid #EDECE8;
+    padding-top:6%;
+}
+.manage-ourselves .container .money-total .order-form{
+    border-right: 1px solid #EDECE8;
+    height: 80%;
+}
+.manage-ourselves .money-total p{
+    text-align: center;
+    line-height: 20px;
+}
+.manage-ourselves .money-total .number{
+    font-size: 19px;
+    color: #000;
+}
+.manage-ourselves .money-total .number .info-pict{
+    font:400 22px/20px "";
+}
+.manage-ourselves .information-total{
+    height: 20%;
+    border-bottom: 1px solid #EDECE8;
+    text-align: center;
+    line-height: 20px;
+}
+.manage-ourselves .information-total .small-picture{
+    width: 35px;
+    height: 35px;
+    border-radius:50% ;
+    margin:10px auto;
+
+}
+.manage-ourselves .information-total .small-picture .info-pic{
+    font-size: 20px;
+    color: #fff;
+    line-height: 35px;
+}
+.manage-ourselves .information-total .information{
+    height: 100%;
+    border-right: 1px solid #EDECE8;
+
+}
+.manage-ourselves .information-total .col-xs-4{
+    padding-top: 5%;
+}
+.manage-ourselves .information-total .yellow{
+    background-color: #FFB45E;
+}
+.manage-ourselves .information-total .pale-green{
+    background-color: #B4D98C;
+}
+.manage-ourselves .information-total .reddish-orange{
+    background-color: #FC8888;
+}
+.manage-ourselves .information-total .light-blue{
+    background-color: #82DCC2;
+}
+.manage-ourselves .information-total .light-purple{
+    background-color: #C7A9EF;
+}
+.manage-ourselves .information-total .dark-blue{
+    background-color: #8CC9F5;
+}
+.manage-ourselves .manage-index .form-group{
+    text-align: left;
+}

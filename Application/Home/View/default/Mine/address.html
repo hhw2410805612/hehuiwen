@@ -1,0 +1,51 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/mine/address.css"/>
+</block>
+<block name="body">
+    <div class="address-manage">
+        <div class="container head">
+            <div class="row margin-none">
+                <div class="col-xs-8 text-left">
+                    <span class="name">我的地址管理</span>
+                </div>
+                <div class="col-xs-4 text-right">
+                    <span class="manager">管理</span>
+                </div>
+            </div>
+        </div>
+        <div class="container pass"></div>
+        <div class="container body">
+            <volist name="addinfo" id="vo">
+            <div class="row">
+                <div class="col-xs-9">
+                    <span class="block detail-head text-ellipsis">{$vo.site}&nbsp;&nbsp;{$vo.xxsite}</span>
+                    <span class="block detail-body text-ellipsis">{$vo.name}&nbsp;&nbsp;{$vo.sexname}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.tell}</span>
+                </div>
+                <div class="col-xs-3 edit text-right">
+                    <span class="glyphicon glyphicon-pencil edit-icon" address-id="{$vo.address_id}"></span>&nbsp;
+                    <span class="glyphicon glyphicon-trash delete-icon" address-id="{$vo.address_id}"></span>
+                </div>
+            </div>
+            </volist>
+        </div>
+
+        <!--新增用户地址-->
+        <div class="container footer">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            <span class="new">新增收货地址</span>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/mine/mine.address.js"></script>
+    <script type="text/javascript">
+        //返回至主界面
+        if (window.history && window.history.pushState) {
+            $(window).on('popstate', function () {
+                window.location.href = Home + "Shop/mine.html";
+            });
+            window.history.pushState('forward', null, 'address.html');
+        }
+    </script>
+</block>

@@ -1,0 +1,89 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/shop/order_detail.css"/>
+</block>
+<block name="body">
+    <div class="shop-order-detail container">
+        <div class="order-information">
+            <ul class="list-group">
+                <li class="list-group-item text-center finish">
+                    <if condition="$group['status'] eq 0">
+                        买家已下单
+                        <elseif condition="$group['status'] eq 1"/>
+                        商家已接单
+                        <elseif condition="$group['status'] eq 2"/>
+                        骑手配送中
+                        <elseif condition="$group['status'] eq 3"/>
+                        订单已完成
+                        <elseif condition="$group['status'] eq 4"/>
+                        订单已评价
+                        <elseif condition="$group['status'] eq -1"/>
+                        订单已取消
+                    </if>
+                </li>
+                <li class="list-group-item text-center">
+                    <if condition="$group['status'] eq 0">
+                        商家还没有接单哦，可以打电话催一催。
+                        <elseif condition="$group['status'] eq 1"/>
+                        商家已经接单，不要着急。
+                        <elseif condition="$group['status'] eq 2"/>
+                        订单正在配送中，静静等待就好。
+                        <elseif condition="$group['status'] eq 3"/>
+                        感谢你对本商品的支持，欢迎再次光临。
+                        <elseif condition="$group['status'] eq 4"/>
+                        感谢你对本商品的支持，欢迎再次光临。
+                        <elseif condition="$group['status'] eq -1"/>
+                        订单已取消，有什么问题给客服反馈哦。
+                    </if>
+                </li>
+                <li class="list-group-item text-center">
+                    <a class="tell" href="tel://{$shop.shop_tell}"><button type="button" class="btn btn-default">联系商家</button></a>
+                    <a class="tell" href="__CONTROLLER__/detail/shop_id/{$shop.shop_id}.html"><button type="button" class="btn btn-warning">再来一单</button></a>
+                </li>
+            </ul>
+        </div>
+        <!--店家信息-->
+        <div class="store-information">
+            <span class="picture-left"><img src="{$shop.shop_img}" alt=""></span>
+            <span class="shop-information">{$shop.name}</span>
+            <span class="picture-right"><img src="__PUBLIC__/Home/images/shop_detail/right-font.png" alt=""></span>
+        </div>
+        <!--具体菜品数量-->
+        <ul>
+            <volist name="goodsList" id="vo">
+                <li class="dishes">
+                    <div class="dishes-picture"><img src="{$vo.goods.image}" alt="{$vo.goods.name}"></div>
+                    <p class="food-name"><b>{$vo.goods.name}</b></p>
+                    <p class="food-name">{$vo.comment}</p>
+                    <p class="food-num">x{$vo.count}</p>
+                    <p class="tmoney">￥{$vo.money}</p>
+                </li>
+            </volist>
+        </ul>
+        <!--各种费用-->
+        <div class="cost">
+            <p class="fl">配送费</p>
+            <p class="fr">￥{$shop.run_money}</p>
+        </div>
+        <!--总计费用-->
+            <div class="num-money">
+                <div class="total"><span class="out-of-pocket">总计<a style="color: red">￥{$group.money}</a></span></div>
+            </div>
+        <ul class="customer-information">
+            <li>
+                <span class="custom-claim">配送地址</span>
+                <span class="claim">
+                    <p>{$address.name}(<if condition="$address['sex'] eq 1">先生<else/>女士</if>)
+                        &nbsp;&nbsp;{$address.tell}<br/>{$address.site}&nbsp;&nbsp;{$address.xxsite}</p>
+                </span>
+            </li>
+            <li><span class="custom-claim">配送服务</span><span class="claim">由商家提供服务</span></li>
+            <li><span class="custom-claim">订单号码</span><span class="claim">{$group.group_id}</span></li>
+            <li><span class="custom-claim">订单时间</span><span class="claim">{$group.time}</span></li>
+            <li><span class="custom-claim">支付方式</span><span class="claim">微信支付</span></li>
+        </ul>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/shop/order.detail.js"></script>
+</block>

@@ -1,0 +1,116 @@
+<extend name="Base/base"/>
+<block name="link">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/manage/ourselves.css"/>
+</block>
+<block name="body">
+    <notempty name="shops">
+        <!--我的店铺-->
+        <div class="manage-ourselves">
+            <!--店铺头部-->
+            <div class="container shop-banner">
+                <div class="row shop-list">
+                    <volist name="shops" id="vo" key="key">
+                        <div class="col-xs-3" shop-id="{$vo.shop_id}">
+                            <img class="img-circle" src="{$vo.shop_img}" alt="{$vo.name}">
+                        </div>
+                        <in name="key" value="4,8,12,16,20,24,28">
+                            </div><div class="row shop-list">
+                        </in>
+                    </volist>
+                </div>
+                <div class="row shop-info">
+                    <div class="col-xs-8">
+                        <div class="shop-name">{$shops.0.name}</div>
+                        <div class="shop-status">{$shops.0.status_name}</div>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <a href="__MODULE__/Shop/detail/shop_id/{$shops.0.shop_id}.html">
+                            <div class="shop-mine">我的店铺</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container shop-content">
+                <div class="row money-total">
+                    <div class="col-xs-6 order-form text-center">
+                        <p class="number" id="todayNumber">{$count.order}</p>
+                        <p>今日有效订单</p>
+                    </div>
+                    <div class="col-xs-6 text-center">
+                        <p class="number" id="todayMoney"><span class="glyphicon glyphicon-yen info-pict"></span>{$count.money}</p>
+                        <p>今日营业额</p>
+                    </div>
+                </div>
+                <div class="row information-total">
+                    <div class="col-xs-4 information text-center" tag-no="1">
+                        <p class="small-picture yellow text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p id="order_manage">订单管理</p>
+                    </div>
+                    <div class="col-xs-4 information text-center" tag-no="2">
+                        <p class="small-picture pale-green text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>商品管理</p>
+                    </div>
+                    <div class="col-xs-4 information text-center" tag-no="3">
+                        <p class="small-picture dark-blue"><span class="glyphicon glyphicon-thumbs-up info-pic"></span>
+                        </p>
+                        <p>店铺信息</p>
+                    </div>
+                </div>
+                <div class="row information-total">
+                    <div class="col-xs-4 information text-center" tag-no="4">
+                        <p class="small-picture reddish-orange text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>今日统计</p>
+                    </div>
+                    <div class="col-xs-4 information text-center" tag-no="5">
+                        <p class="small-picture light-blue text-center"><span
+                                class="glyphicon glyphicon-thumbs-up info-pic"></span></p>
+                        <p>历史统计</p>
+                    </div>
+                </div>
+
+
+
+            <!--商店信息模态框-->
+            <div class="modal fade" id="shopInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content text-center">
+                        <div class="modal-header">
+                            <button type="button" class="close" id="shopInfoClose" data-dismiss="modal"
+                                    aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">修改信息</h4>
+                        </div>
+                        <form action="{:U('update_shop')}" method="post" enctype="multipart/form-data">
+                            <div class="modal-body" id="shopInfoBody">
+                            </div>
+                            <div class="modal-footer text-center">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消修改</button>
+                                <button type="submit" class="btn btn-warning">保存修改</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <else/>
+        <div class="container">
+            <div class="alert alert-warning alert-dismissible text-center" style="margin-top: 10px" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <strong class="text-center">还没有自营店喔！</strong></div>
+        </div>
+
+    </notempty>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        var shop_id = "<?php echo $shops[0]['shop_id'];?>";
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/manage/manage.ourselves.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/common/news.js"></script>
+</block>
